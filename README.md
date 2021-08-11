@@ -1,6 +1,8 @@
 # Discord Variables Plugin
 ## A plugin to help with saving variables for bots
-
+## Instalation:
+- Windows: `pip install discord_variables_plugins`
+- Linux: `pip3 install discord_variables_plugins`
 ## Documentation:
 ### Server Specific Variables:
 - Import package, and create ServerVariables object:
