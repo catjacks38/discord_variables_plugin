@@ -33,7 +33,7 @@ serverVars.removeServer(guild)
 ```
 - To remove a variable of a server
 ```python
-# Pass discord.Guild for guild
+# Pass a discord.Guild object for guild
 # Pass a string for varName
 # Returns -1 if varName isn't a variable on the server
 serverVars.removeVar(guild, varName)
