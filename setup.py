@@ -5,7 +5,7 @@ with open("README.md", "r") as file:
 
 setuptools.setup(
     name="discord_variables_plugin",
-    version="1.0",
+    version="1.1",
     author="catjacks38",
     description="A plugin to help with saving variables for Discord bots",
     long_description=longDesc,
