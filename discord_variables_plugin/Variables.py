@@ -19,45 +19,25 @@ class ServerVariables:
 
     def get(self, server: discord.Guild, var: str):
         # Tries to read the var key of the server.id dictionary
-        # If there was an error, the function will return -1
-        try:
-            return pickle.loads(base64.b64decode(self.varDict[str(server.id)][var]))
-        except:
-            return -1
+        return pickle.loads(base64.b64decode(self.varDict[str(server.id)][var]))
 
     def clearServer(self, server: discord.Guild):
         # Clears all of the variables from the server.id dictionary
-        # Returns -1 if there was an error
-        try:
-            del self.varDict[str(server.id)]
-        except:
-            return -1
+        del self.varDict[str(server.id)]
 
     def removeVar(self, server: discord.Guild, var: str):
         # Removes var from the server.id dictionary
-        # Returns -1 if there was an error
-        try:
-            del self.varDict[str(server.id)][var]
-        except:
-            return -1
+        del self.varDict[str(server.id)][var]
 
     def save(self, fp: str):
         # Saves self.varDict in JSON format to fp
-        # Returns -1 if there was an error
-        try:
-            with open(fp, "w") as file:
-                json.dump(self.varDict, file)
-        except:
-            return -1
+        with open(fp, "w") as file:
+            json.dump(self.varDict, file)
 
     def load(self, fp: str):
         # Loads fp into self.varDict
-        # Returns -1 if there was an error
-        try:
-            with open(fp, "r") as file:
-                self.varDict = json.load(file)
-        except:
-            return -1
+        with open(fp, "r") as file:
+            self.varDict = json.load(file)
 
 
 # A class to store global user variables
@@ -75,42 +55,22 @@ class GlobalUserVariables:
 
     def get(self, user: discord.User, var: str):
         # Tries to read the var key of the user.id dictionary
-        # If there was an error, the function will return -1
-        try:
-            return pickle.loads(base64.b64decode(self.varDict[str(user.id)][var]))
-        except:
-            return -1
+        return pickle.loads(base64.b64decode(self.varDict[str(user.id)][var]))
 
     def clearUser(self, user: discord.User):
         # Clears all of the variables from the user.id dictionary
-        # Returns -1 if there was an error
-        try:
-            del self.varDict[str(user.id)]
-        except:
-            return -1
+        del self.varDict[str(user.id)]
 
     def removeVar(self, user: discord.User, var: str):
         # Removes var from the user.id dictionary
-        # Returns -1 if there was an error
-        try:
-            del self.varDict[str(user.id)][var]
-        except:
-            return -1
+        del self.varDict[str(user.id)][var]
 
     def save(self, fp: str):
         # Saves self.varDict in JSON format to fp
-        # Returns -1 if there was an error
-        try:
-            with open(fp, "w") as file:
-                json.dump(self.varDict, file)
-        except:
-            return -1
+        with open(fp, "w") as file:
+            json.dump(self.varDict, file)
 
     def load(self, fp: str):
         # Loads fp into self.varDict
-        # Returns -1 if there was an error
-        try:
-            with open(fp, "r") as file:
-                self.varDict = json.load(file)
-        except:
-            return -1
+        with open(fp, "r") as file:
+            self.varDict = json.load(file)
